@@ -23,6 +23,7 @@ assessmentButton.onclick = () => {
   resultDivided.appendChild(paragraph);
 
   // TODO ツイートエリアの作成
+  tweetDivided.innerText = '';
 };
 
 const answers = [
