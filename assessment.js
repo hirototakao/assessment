@@ -10,58 +10,23 @@ assessmentButton.onclick = () => {
     // 名前が空の時は処理を終了する
     return;
   }
+
   // 診断結果表示エリアの作成
   resultDivided.innerText = '';
-　
-
-  // headerDivision の作成
-  const headerDivision = document.createElement('div');
-  headerDivision.setAttribute('class', 'card-header');
-  headerDivision.innerText = '診断結果';
-
-  // bodyDivision の作成
-  const bodyDivision = document.createElement('div');
-  bodyDivision.setAttribute('class', 'card-body');
+  const header = document.createElement('h3');
+  header.innerText = '診断結果';
+  resultDivided.appendChild(header);
 
   const paragraph = document.createElement('p');
-  paragraph.setAttribute('class', 'card-text');
   const result = assessment(userName);
   paragraph.innerText = result;
-  bodyDivision.appendChild(paragraph);
+  resultDivided.appendChild(paragraph);
 
-  // resultDivision に Bootstrap のスタイルを適用する
-  resultDivision.setAttribute('class', 'card');
-
-  // headerDivision と bodyDivision を resultDivision に差し込む
-  resultDivision.appendChild(headerDivision);
-  resultDivision.appendChild(bodyDivision);
-  // ツイートエリアの作成
-  tweetDivided.innerText = '';
-  const anchor = document.createElement('a');
-  const hrefValue =
-    'https://twitter.com/intent/tweet?button_hashtag=' +
-    encodeURIComponent('あなたのいいところ') +
-    '&ref_src=twsrc%5Etfw';
-  anchor.setAttribute('href', hrefValue);
-  anchor.setAttribute('class', 'twitter-hashtag-button');
-  anchor.setAttribute('data-text', result);
-  anchor.innerText = 'Tweet #あなたのいいところ';
-  tweetDivided.appendChild(anchor);
-
-  // widgets.js の設定
-  const script = document.createElement('script');
-  script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
-  tweetDivided.appendChild(script);
+  // TODO ツイートエリアの作成
 };
-userNameInput.onkeydown = event => {
-  if (event.key === 'Enter') {
-    assessmentButton.onclick();
-  }
-};
-
 
 const answers = [
-  '{userName}のいいところは声です。{userName}の特徴的な声はみなを惹きつけ、心に残ります。',
+  '{userName}のいいところは声です。{userName}の特徴的な声は皆を惹きつけ、心に残ります。',
   '{userName}のいいところはまなざしです。{userName}に見つめられた人は、気になって仕方がないでしょう。',
   '{userName}のいいところは情熱です。{userName}の情熱に周りの人は感化されます。',
   '{userName}のいいところは厳しさです。{userName}の厳しさがものごとをいつも成功に導きます。',
