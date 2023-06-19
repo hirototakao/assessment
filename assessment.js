@@ -34,6 +34,27 @@ assessmentButton.onclick = () => {
   // headerDivision と bodyDivision を resultDivision に差し込む
   resultDivision.appendChild(headerDivision);
   resultDivision.appendChild(bodyDivision);
+  // headerDivision の作成
+  const headerDivision = document.createElement('div');
+  headerDivision.setAttribute('class', 'card-header');
+  headerDivision.innerText = '診断結果';
+
+  // bodyDivision の作成
+  const bodyDivision = document.createElement('div');
+  bodyDivision.setAttribute('class', 'card-body');
+
+  const paragraph = document.createElement('p');
+  paragraph.setAttribute('class', 'card-text');
+  const result = assessment(userName);
+  paragraph.innerText = result;
+  bodyDivision.appendChild(paragraph);
+
+  // resultDivision に Bootstrap のスタイルを適用する
+  resultDivision.setAttribute('class', 'card');
+
+  // headerDivision と bodyDivision を resultDivision に差し込む
+  resultDivision.appendChild(headerDivision);
+  resultDivision.appendChild(bodyDivision);
   // headerDivided の作成
   const headerDivided = document.createElement('div');
   headerDivided.setAttribute('class', 'card-header');
