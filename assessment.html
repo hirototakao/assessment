@@ -7,18 +7,38 @@
   <meta property="og:url" content="https://hirototakao.github.io/assessment/assessment.html">
   <meta property="og:title" content="あなたのいいところ診断">
   <meta property="og:description" content="N予備校プログラミング入門コースで製作した「あなたのいいところ診断」サイトです。">
-  <link rel="stylesheet" href="assessment.css">
-  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="annoymous">
   <title>hirototakaoが作ったあなたのいいところ診断</title>
+  <style>
+    .content-adjuster {
+      text-align:center;
+    }
+    .btn-info {
+     color:white;
+    }     
+ </style>
 </head>
-<body>
-  <h1>あなたのいいところは?</h1>
-  <p>診断したい名前を入れてください。</p>
-  <input type="text" id="user-name" size="40" maxlength="20">
-  <button id="assessment">診断する</button>
-  <div id="result-area"></div>
-  <div id="tweet-area"></div>
+<body class="bg-primary-subtle">
+  <header>
+    <nav class="navbar bg-info" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">あなたのいいところ診断</a>
+      </div>
+    </nav>
+  </header>
+  <div class="container pt-5" class="content-adjuster">
+      <h1 class="content-adjuster">あなたのいいところは？</h1>
+      <p class="content-adjuster">診断したい名前を入れてください。</p>
+      <div style="margin-left:420px;">
+        <div class="col-sm-9 col-lg-6">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="user-name" size="40" maxlength="20" />
+      <button class="btn-info btn theme-changer" id="assessment">診断する</div>
+    </div>
+        </div>
+        <div id="result-area"></div>
+      </div>
+</div>
   <script src="assessment.js"></script>
 </body>
 </html>
