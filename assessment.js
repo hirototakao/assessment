@@ -43,8 +43,7 @@ function showDiagnosedResult(userName) {
     bodyDivision.appendChild(tweetScript);
 
     // resultDivision に Bootstrap のスタイルを適用する
-    resultDivision.setAttribute('class', 'card');
-    resultDivision.setAttribute('style', 'margin:0 200px 0 200px;')
+    resultDivision.setAttribute('class', 'card d-flex justify-content-center');
     
     //incorporate headerDivision, tweetDivision and bodyDivision into the resultDivision
     resultDivision.appendChild(headerDivision);
