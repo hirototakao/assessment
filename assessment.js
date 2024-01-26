@@ -55,6 +55,7 @@ assessmentButton.addEventListener(
   () => {
     const userName = userNameInput.value;
     if(userName.length === 0){
+      alert('please type your name into the text area.');
       return;
     }
     showDiagnosedResult(userName);
@@ -67,7 +68,8 @@ userNameInput.addEventListener(
     if(event.code === 'Enter'){
      const userName = userNameInput.value;
      if(userName.length === 0){
-        return;
+      alert('please type your name into the text area.');
+      return;
      } 
      showDiagnosedResult(userName);
     }
